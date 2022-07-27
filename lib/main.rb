@@ -209,9 +209,9 @@ class Game
         # check if the pice is pawn and at the end of the board
         pos = @@last_position.split("")
         tmp = @board.chess_board[8-pos.last.to_i][@board.row.index(pos.first)]
-        if tmp == "\u2659 " && pos.last.to_i == 1
+        if tmp == "♙ " && pos.last.to_i == 1
             promote_pawn(pos, computer)
-        elsif tmp == "\u265F " && pos.last.to_i == 8
+        elsif tmp == "♟ " && pos.last.to_i == 8
             promote_pawn(pos, computer)
         end
     end

@@ -7,18 +7,18 @@ class Board
     attr_reader :pices
     
     @@CHESS_SYMBOLS = {
-        :w_king => "\u2654 ",
-        :w_queen => "\u2655 ",
-        :w_rook => "\u2656 ",
-        :w_bishop => "\u2657 ",
-        :w_knight => "\u2658 ",
-        :w_pawn => "\u2659 ",
-        :b_king => "\u265A ",
-        :b_queen => "\u265B ",
-        :b_rook => "\u265C ",
-        :b_bishop => "\u265D ",
-        :b_knight => "\u265E ",
-        :b_pawn => "\u265F "
+        :w_king => "♔ ",
+        :w_queen => "♕ ",
+        :w_rook => "♖ ",
+        :w_bishop => "♗ ",
+        :w_knight => "♘ ",
+        :w_pawn => "♙ ",
+        :b_king => "♚ ",
+        :b_queen => "♛ ",
+        :b_rook => "♜ ",
+        :b_bishop => "♝ ",
+        :b_knight => "♞ ",
+        :b_pawn => "♟ "
     }
     
     # character row for the chess board
@@ -44,10 +44,10 @@ class Board
 
         if @player == "w"
             # all white pices
-            @pices = ["\u2654 ", "\u2655 ", "\u2656 ", "\u2657 ", "\u2658 ", "\u2659 "]
+            @pices = ["♔ ", "♕ ", "♖ ", "♗ ", "♘ ", "♙ "]
         else
             # all black pices
-            @pices = ["\u265A ", "\u265B ", "\u265C ", "\u265D ", "\u265E ", "\u265F "]
+            @pices = ["♚ ", "♛ ", "♜ ", "♝ ", "♞ ", "♟ "]
         end
     end
 
@@ -127,9 +127,9 @@ class Board
 
     def get_king_position 
         if @player == 'w'
-            king = "\u2654 "
+            king = "♔ "
         else
-            king = "\u265A "
+            king = "♚ "
         end
 
         king_pos = nil

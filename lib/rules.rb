@@ -2,7 +2,7 @@ module Rules
     # chessboard for testing if moving any pice will cause checkmate
     def checkmate?(last_position, board = @board)
         # make sure that the king not in a risk from last movement
-        board.player == "w" ? king_value = "\u265A " : king_value = "\u2654 "
+        board.player == "w" ? king_value = "♚ " : king_value = "♔ "
         board.get_possible_moves(last_position).each do |move|
             move = move.split("")
             if board.chess_board[8-move.last.to_i][board.row.index(move.first)] == king_value
@@ -19,7 +19,7 @@ module Rules
         king = nil
         @board.get_all_player_pices.each do |pice|
             
-            if ["\u2654 ", "\u265A "].include?(pice.last)
+            if ["♔ ", "♚ " ].include?(pice.last)
                 king = pice 
             else
                 pices_moves[pice.last] = Array.new
@@ -111,9 +111,9 @@ module Rules
     # swap pawn when it reach the end of the enemy line
     def  promote_pawn(pos, computer)
         if @board.player == "w"
-            pices_swap = ["\u2655 ", "\u2656 ", "\u2657 ", "\u2658 "]
+            pices_swap = ["♕ ", "♖ ", "♗ ", "♘ "]
         else
-            pices_swap = ["\u265B ", "\u265C ", "\u265D ", "\u265E "]
+            pices_swap = ["♛ ", "♜ ", "♝ ", "♞ "]
         end
 
         puts "-----you can now promote your pawn--------"
